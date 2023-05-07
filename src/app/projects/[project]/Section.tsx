@@ -18,11 +18,12 @@ gsap.registerPlugin(ScrollTrigger);
 function Section({ project }: Props) {
   const { name, image } = project;
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
+  const overviewRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       let panels = gsap.utils.toArray(".panel");
       const sectionWidth = sectionRef?.current?.offsetWidth;
+      const overviewWidth = overviewRef?.current?.offsetWidth;
 
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
@@ -34,6 +35,20 @@ function Section({ project }: Props) {
           end: () => {
             return "+=" + sectionWidth;
           },
+        },
+      });
+
+      // gsap.set("")
+
+      gsap.to(".backtext", {
+        opacity: 1,
+        duration: 10,
+        scrollTrigger: {
+          trigger: overviewRef.current,
+          start: () => {
+            return "+=" + overviewWidth;
+          },
+          // toggleActions: "play pause resume reverse",
         },
       });
     }, sectionRef);
@@ -48,13 +63,11 @@ function Section({ project }: Props) {
         className="flex w-[400vw] h-screen flex-wrap text-slate-200 relative "
       >
         <div className="absolute z-0 ">
-          <div className="relative ">
-            <h1 className="text-[32rem] z-10 md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
-              <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
-                {name}
-              </span>
-            </h1>
-          </div>
+          <h1 className="opacity-0 backtext text-[32rem] z-10 md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
+            <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
+              {name}
+            </span>
+          </h1>
         </div>
         <div className="panel bg-background w-screen h-screen p-4 flex items-center">
           <div className="px-4">
@@ -69,7 +82,10 @@ function Section({ project }: Props) {
             </p>
           </div>
         </div>
-        <div className="panel bg-background w-screen h-screen p-4 flex items-center ">
+        <div
+          ref={overviewRef}
+          className="panel bg-background w-screen h-screen p-4 flex items-center "
+        >
           <div className="">
             <h1 className="f font-customFont text-7xl md:text-9xl max max-w-4xl my-4">
               <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
