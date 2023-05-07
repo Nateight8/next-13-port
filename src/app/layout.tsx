@@ -1,7 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--bodyFont" });
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${customFont.variable}`}>{children}</body>
+      <body className={`${customFont.variable} ${montserrat.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
