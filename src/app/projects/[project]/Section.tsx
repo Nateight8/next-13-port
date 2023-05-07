@@ -5,7 +5,11 @@ import React, { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Project } from "@/types/project";
 import { AspectRatio } from "@/src/components/ui/aspect-ratio";
-import { FaceIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import {
+  ArrowTopRightIcon,
+  FaceIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 import { Button, buttonVariants } from "@/src/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -102,7 +106,7 @@ function Section({ project }: Props) {
       </section>
       <div className="bg-background min-h-screen w-screen flex items-center justify-center">
         <div className="max-w-prose text-slate-300 px-4">
-          <h1 className=" te text-3xl font-custom uppercase mb-2">
+          <h1 className="text-3xl font-custom uppercase mb-2">
             about this build
           </h1>
           <p className="text-sm">
@@ -111,6 +115,14 @@ function Section({ project }: Props) {
             deleniti consequatur sint adipisci non, voluptate nemo optio dicta
             odio autem.
           </p>
+          <div className="my-2  space-x-3">
+            <Link href="#" className={`${buttonVariants({ variant: "link" })}`}>
+              Visit Websit <ArrowTopRightIcon className="ml-2 h-4 w-4" />
+            </Link>
+            <Link href="#" className={buttonVariants({ variant: "link" })}>
+              Git Repo <ArrowTopRightIcon className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </>
@@ -124,7 +136,12 @@ export default Section;
 <h1 className="text-[32rem] md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
   {name}
 </h1>
-
+<Button variant="link" className="flex flex-col">
+              <div className="">
+             
+              </div>
+              <div className="w-full h-[2px] bg-slate-200" />
+            </Button>
 <div className="panel  z-20 bg-transparent h-screen w-screen flex items-center justify-center">
           <div className="max-w-prose shadow-2xl shadow-slate-800 ring-2 ring-slate-800 ring-offset-4 ring-offset-current ring-opacity-25 p-4 rounded-md bg-background">
             <h3 className="te text-2xl font-customFont mb-2">

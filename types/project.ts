@@ -10,4 +10,6 @@ export type Project = {
   content: PortableTextBlock[];
   dataset_text: string;
   dataset_bg: string;
+  github_url: string;
+  web_url: string;
 };

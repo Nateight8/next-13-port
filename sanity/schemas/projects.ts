@@ -21,6 +21,16 @@ const project = {
       type: "string",
     },
     {
+      name: "github_url",
+      title: "Github Url",
+      type: "string",
+    },
+    {
+      name: "web_url",
+      title: "Website Url",
+      type: "string",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
