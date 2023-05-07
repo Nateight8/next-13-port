@@ -3,7 +3,7 @@ import { Project } from "../types/project";
 
 export async function getProjects(): Promise<Project[]> {
   const client = createClient({
-    projectId: "fx47h1t9",
+    projectId: "59cephms",
     dataset: "production",
     apiVersion: "2023-03-04",
   });
@@ -16,14 +16,16 @@ export async function getProjects(): Promise<Project[]> {
         "slug":slug.current,
         "image":image.asset->url,
         url,
-        content
+        content,
+        dataset_text,
+        dataset_bg
     }`
   );
 }
 
 export async function getProject(slug: string): Promise<Project> {
   const client = createClient({
-    projectId: "fx47h1t9",
+    projectId: "59cephms",
     dataset: "production",
     apiVersion: "2023-03-04",
   });
@@ -36,7 +38,9 @@ export async function getProject(slug: string): Promise<Project> {
         "slug":slug.current,
         "image":image.asset->url,
         url,
-        content
+        content,
+        dataset_text,
+        dataset_bg
     }`,
     { slug }
   );

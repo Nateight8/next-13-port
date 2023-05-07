@@ -1,8 +1,13 @@
+"use client";
 import { AspectRatio } from "@/src/components/ui/aspect-ratio";
 import { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+// import React, { useLayoutEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
   project: Project;
@@ -10,17 +15,19 @@ type Props = {
 
 function Project({ project }: Props) {
   const { dataset_bg, dataset_text, image, name, slug } = project;
+
   return (
     <>
       <div
-        // ref={appRef}
         data-bg={dataset_bg}
         data-name={dataset_text}
-        className="project w-full overflow-hidden h-screen px-4 my-6 flex items-center justify-center relative"
+        className="project w-full flex-col overflow-hidden h-screen px-4 my-6 flex items-center justify-center relative"
       >
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-32 md:bottom-7 uppercase z-0">
-          <h1 className="text-3xl md:text-9xl text-slate-300 whitespace-nowrap font-customFont font-bold  ">
-            {name}
+        <div className="absolute left-1/2 -translate-x-1/2 uppercase z-0">
+          <h1 className=" uppercase text-[32rem] opacity-20 md:text-[40rem] text-slate-300 whitespace-nowrap font-thunder font-bold  ">
+            <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
+              {name}
+            </span>
           </h1>
         </div>
         <Link
@@ -38,6 +45,7 @@ function Project({ project }: Props) {
             )}
           </AspectRatio>
         </Link>
+        <div className=" py-4 text-slate-300 text-xl">{name}</div>
       </div>
     </>
   );

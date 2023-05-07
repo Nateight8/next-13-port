@@ -10,10 +10,16 @@ export const metadata = {
 };
 
 import localFont from "next/font/local";
-const customFont = localFont({
-  src: "../../public/font/custom.ttf",
+const thunder = localFont({
+  src: "../../public/font/Thunder-BlackLC.ttf",
   variable: "--headingFont",
 });
+
+const custom = localFont({
+  src: "../../public/font/custom.ttf",
+  variable: "--heading",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -21,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${customFont.variable} ${montserrat.className}`}>
+      <body
+        className={`${thunder.variable} ${montserrat.className} ${custom.variable}`}
+      >
         {children}
       </body>
     </html>

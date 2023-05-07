@@ -63,43 +63,27 @@ function Section({ project }: Props) {
         className="flex w-[400vw] h-screen flex-wrap text-slate-200 relative "
       >
         <div className="absolute z-0 ">
-          <h1 className="opacity-0 backtext text-[32rem] z-10 md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
+          <h1 className=" uppercase opacity-0 backtext text-[32rem] z-10 md:text-[40rem] text-slate-300 whitespace-nowrap font-thunder font-bold">
             <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
               {name}
             </span>
           </h1>
         </div>
         <div className="panel bg-background w-screen h-screen p-4 flex items-center">
-          <div className="px-4">
-            <p className="font-customFont">03-04-2023</p>
-            <h1 className=" font-customFont text-7xl md:text-9xl max-w-4xl my-4">
-              <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
-                {name}
-              </span>
+          <div className="">
+            <p className="text-sm pb-3">03-04-2023</p>
+            <h1 className="uppercase font-thunder text-7xl md:text-9xl max-w-4xl">
+              {name}
             </h1>
-            <p className="text-base">
-              NEW FOLIO, NEW FACE FOR A CREATIVE & TECHNICAL UI/UX AGENCY
+            <p className="text-sm">
+              New folio, new face for a creative & technical ui/ux agency
             </p>
           </div>
         </div>
         <div
           ref={overviewRef}
           className="panel bg-background w-screen h-screen p-4 flex items-center "
-        >
-          <div className="">
-            <h1 className="f font-customFont text-7xl md:text-9xl max max-w-4xl my-4">
-              <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
-                Overview
-              </span>
-            </h1>
-            <p className="text-base max-w-3xl">
-              After a few years of existence and successful projects, it is
-              time/time for DPP’s new website. The objective was to modernize
-              the site, in order to better reflect their evolution. While
-              keeping a warm and human touch, which is unique to them.
-            </p>
-          </div>
-        </div>
+        ></div>
         <div className="panel w-screen h-screen px-4 flex items-center justify-center bg-transparent">
           <div className="max-w-[41.875rem] mb-4 shadow-2xl shadow-slate-800 w-full z-10 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current ring-opacity-25">
             <AspectRatio ratio={16 / 9}>
@@ -116,7 +100,19 @@ function Section({ project }: Props) {
         </div>
         <div className="panel bg-background w-screen h-screen p-4 flex items-center "></div>
       </section>
-      <div className="bg-gray-900 h-screen w-screen"></div>
+      <div className="bg-background min-h-screen w-screen flex items-center justify-center">
+        <div className="max-w-prose text-slate-300 px-4">
+          <h1 className=" te text-3xl font-custom uppercase mb-2">
+            about this build
+          </h1>
+          <p className="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            culpa ullam eos explicabo esse, sunt aperiam aliquid rerum fugiat
+            deleniti consequatur sint adipisci non, voluptate nemo optio dicta
+            odio autem.
+          </p>
+        </div>
+      </div>
     </>
   );
 }
