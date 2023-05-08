@@ -118,7 +118,10 @@ function Section({ project }: Props) {
           <div className="my-2">
             <Link
               href={`${web_url}|| "/"`}
-              className={`${buttonVariants({ variant: "link" })} mr-3`}
+              className={`${buttonVariants({
+                variant: "link",
+              })}`}
+              style={{ padding: "0" }}
             >
               Visit Websit <ArrowTopRightIcon className="ml-2 h-4 w-4" />
             </Link>
