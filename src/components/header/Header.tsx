@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 type Props = {};
 
 function Header({}: Props) {
@@ -19,12 +19,12 @@ function Header({}: Props) {
     },
     {
       id: "2",
-      label: "About",
+      label: "About me",
       href: "/",
     },
     {
       id: "3",
-      label: "projects",
+      label: "works",
       href: "/",
     },
     {
@@ -34,8 +34,26 @@ function Header({}: Props) {
     },
   ];
 
+  const navRef = useRef(null);
+  const navlinkRef = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const links = gsap.utils.toArray(".navlink");
+      // links.forEach((item, idx) => {});
+      gsap.from(".navlink", {
+        yPercent: 130,
+        duration: 1,
+        delay: 1,
+      });
+    }, navRef);
+    return () => {
+      ctx.revert();
+    };
+  }, [openNav]);
+
   return (
-    <div>
+    <div ref={navRef}>
       <nav className="fixed top-0 left-0 w-full bg-background z-40">
         <div className="flex items-center justify-between text-slate-200 p-4 ">
           <Link href="/" className=" font-customTwo">
@@ -56,8 +74,24 @@ function Header({}: Props) {
         }}
       >
         <ul className="absolute space-y-4 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 items-center justify-center flex flex-col">
-          {navlinks.map(({ label, href, id }) => (
-            <li
+          {navlinks.map(({ id, label, href }) => (
+            <li key={id} className="overflow-hidden">
+              <div className="navlink text-slate-300 font-customTwo text-center text-2xl uppercase tracking-wide">
+                <Link href={href}>{label}</Link>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="footer"></div>
+      </div>
+    </div>
+  );
+}
+
+export default Header;
+
+{
+  /* <li
               className="text-slate-200 relative "
               key={id}
               style={{
@@ -72,14 +106,6 @@ function Header({}: Props) {
               >
                 {label}
               </Link>
-              {/* <div className=" absolute inset-0 bg-background"></div> */}
-            </li>
-          ))}
-        </ul>
-        <div className="footer"></div>
-      </div>
-    </div>
-  );
+              {/* <div className=" absolute inset-0 bg-background"></div> */
 }
-
-export default Header;
+// </li> */}

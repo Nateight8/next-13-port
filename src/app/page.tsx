@@ -1,21 +1,21 @@
+"use client";
 import Image from "next/image";
 import { AspectRatio } from "@/src/components/ui/aspect-ratio";
 import { getProjects } from "@/sanity/sanity.utils";
 import Project from "./components/Project";
 import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 
 export default async function Home() {
   const projects = await getProjects();
 
-  console.log(projects);
+  // console.log(projects);
+
   return (
     <main className="">
       <Hero />
-      <section className="main flex flex-col items-center justify-between">
-        {projects.map((project) => (
-          <Project key={project._id} project={project} />
-        ))}
-      </section>
+      <Projects projects={projects} />
+      <div className="h-screen w-full"></div>
     </main>
   );
 }
