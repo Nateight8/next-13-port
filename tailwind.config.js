@@ -18,6 +18,7 @@ module.exports = {
       fontFamily: {
         thunder: ["var(--headingFont)"],
         custom: ["var(--heading)"],
+        customTwo: ["var(--custom)"],
       },
       colors: {
         border: "hsl(var(--border))",

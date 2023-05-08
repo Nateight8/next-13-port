@@ -18,7 +18,9 @@ export async function getProjects(): Promise<Project[]> {
         url,
         content,
         dataset_text,
-        dataset_bg
+        dataset_bg,
+        github_url,
+        web_url,
     }`
   );
 }
@@ -40,7 +42,9 @@ export async function getProject(slug: string): Promise<Project> {
         url,
         content,
         dataset_text,
-        dataset_bg
+        dataset_bg,
+        github_url,
+        web_url,
     }`,
     { slug }
   );

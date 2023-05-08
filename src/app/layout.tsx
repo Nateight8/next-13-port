@@ -10,6 +10,8 @@ export const metadata = {
 };
 
 import localFont from "next/font/local";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 const thunder = localFont({
   src: "../../public/font/Thunder-BlackLC.ttf",
   variable: "--headingFont",
@@ -18,6 +20,10 @@ const thunder = localFont({
 const custom = localFont({
   src: "../../public/font/custom.ttf",
   variable: "--heading",
+});
+const monum = localFont({
+  src: "../../public/font/MonumentExtended-Ultrabold.otf",
+  variable: "--custom",
 });
 
 export default function RootLayout({
@@ -28,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${thunder.variable} ${montserrat.className} ${custom.variable}`}
+        className={`${thunder.variable} ${montserrat.className} ${custom.variable} ${monum.variable}`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

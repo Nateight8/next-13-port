@@ -20,7 +20,7 @@ type Props = {
 gsap.registerPlugin(ScrollTrigger);
 
 function Section({ project }: Props) {
-  const { name, image } = project;
+  const { name, image, github_url, web_url } = project;
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const overviewRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
@@ -52,7 +52,7 @@ function Section({ project }: Props) {
           start: () => {
             return "+=" + overviewWidth;
           },
-          // toggleActions: "play pause resume reverse",
+          toggleActions: "play play play reset",
         },
       });
     }, sectionRef);
@@ -115,11 +115,17 @@ function Section({ project }: Props) {
             deleniti consequatur sint adipisci non, voluptate nemo optio dicta
             odio autem.
           </p>
-          <div className="my-2  space-x-3">
-            <Link href="#" className={`${buttonVariants({ variant: "link" })}`}>
+          <div className="my-2">
+            <Link
+              href={`${web_url}|| "/"`}
+              className={`${buttonVariants({ variant: "link" })} mr-3`}
+            >
               Visit Websit <ArrowTopRightIcon className="ml-2 h-4 w-4" />
             </Link>
-            <Link href="#" className={buttonVariants({ variant: "link" })}>
+            <Link
+              href={`${web_url}|| "/"`}
+              className={buttonVariants({ variant: "link" })}
+            >
               Git Repo <ArrowTopRightIcon className="ml-2 h-4 w-4" />
             </Link>
           </div>
@@ -130,54 +136,3 @@ function Section({ project }: Props) {
 }
 
 export default Section;
-
-{
-  /* <div className="absolute z-0 ">
-<h1 className="text-[32rem] md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
-  {name}
-</h1>
-<Button variant="link" className="flex flex-col">
-              <div className="">
-             
-              </div>
-              <div className="w-full h-[2px] bg-slate-200" />
-            </Button>
-<div className="panel  z-20 bg-transparent h-screen w-screen flex items-center justify-center">
-          <div className="max-w-prose shadow-2xl shadow-slate-800 ring-2 ring-slate-800 ring-offset-4 ring-offset-current ring-opacity-25 p-4 rounded-md bg-background">
-            <h3 className="te text-2xl font-customFont mb-2">
-              Project Overview
-            </h3>
-            <p className="text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium magni quo deserunt iure veniam est! Mollitia dolores
-              quis assumenda sapiente expedita natus iusto modi explicabo
-              aliquam! Illo officia labore possimus.
-            </p>
-          </div>
-        </div>
-        <div className="panel h-screen w-screen flex items-center justify-center px-4">
-          <div className="max-w-[41.875rem] mb-4 shadow-2xl shadow-slate-800 w-full z-10 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current ring-opacity-25">
-            <AspectRatio ratio={16 / 9}>
-              {image && (
-                <Image
-                  src={image}
-                  alt=""
-                  fill
-                  className="rounded-md object-cover"
-                />
-              )}
-            </AspectRatio>
-          </div>
-        </div>
-        <div className="panel  z-20 bg-transparent h-screen w-screen flex items-center">
-          <div className="p-4 w-full bg-background">
-            <Link href="/" className={buttonVariants({ variant: "link" })}>
-              Link to Github <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link href="/" className={buttonVariants({ variant: "link" })}>
-              Demo <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-</div> */
-}
