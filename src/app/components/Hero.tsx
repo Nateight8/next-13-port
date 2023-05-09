@@ -15,17 +15,6 @@ function Hero({}: Props) {
   const secRef = useRef(null);
   const headingRef = useRef(null);
 
-  // useEffect(() => {
-  //   let ctx = gsap.context(() => {
-  //     gsap.from(headingRef.current, {
-  //       yPercent: 130,
-  //       duration: 1,
-  //     });
-  //   }, secRef);
-  //   return () => {
-  //     ctx.revert();
-  //   };
-  // }, []);
   return (
     <section ref={secRef} className="w-full bg-background">
       <div className="h-[90vh] w-full flex items-center justify-center bg-background px-4">
@@ -46,13 +35,13 @@ function Hero({}: Props) {
           </p>
           <div className="space-x-2 text-slate-300 my-3 flex items-center md:justify-center ">
             <Link href="">
-              <LinkedInLogoIcon />
+              <LinkedInLogoIcon className="h-6 w-6" />
             </Link>
             <Link href="">
-              <TwitterLogoIcon />
+              <TwitterLogoIcon className="h-6 w-6" />
             </Link>
             <Link href="">
-              <GitHubLogoIcon />
+              <GitHubLogoIcon className="h-6 w-6" />
             </Link>
           </div>
         </div>

@@ -54,7 +54,7 @@ function Header({}: Props) {
 
   return (
     <div ref={navRef}>
-      <nav className="fixed top-0 left-0 w-full bg-background z-40">
+      <nav className="fixed bg-[rgba(10,10,10,0.2)] top-0 left-0 backdrop-blur w-full z-40">
         <div className="flex items-center justify-between text-slate-200 p-4 ">
           <Link href="/" className=" font-customTwo">
             HOME

@@ -12,8 +12,6 @@ type Props = {
 };
 
 function Projects({ projects }: Props) {
-  console.log(projects);
-
   // gsap animation
 
   const appRef = useRef<HTMLDivElement | null>(null);
@@ -26,9 +24,11 @@ function Projects({ projects }: Props) {
         const prevBg = index === 0 ? "" : projects[index - 1]?.dataset.name;
         const prevTxt = index === 0 ? "" : projects[index - 1]?.dataset.bg;
 
+        const startPosition = index === 0 ? "top 20%" : "top 50%";
+
         ScrollTrigger.create({
           trigger: project,
-          start: "top 50%",
+          start: startPosition,
           onEnter: () => {
             gsap.to(".main", {
               background: project.dataset.bg,
@@ -47,9 +47,7 @@ function Projects({ projects }: Props) {
       });
     }, appRef);
 
-    return () => {
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
