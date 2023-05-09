@@ -41,11 +41,13 @@ function Header({}: Props) {
   const navRef = useRef(null);
   const navlinkRef = useRef(null);
 
-  useEffect(() => {
-    setIsVisible(scrollDirection === "down");
-  }, [scrollDirection]);
+  // useEffect(() => {
+
+  // }, []);
 
   useLayoutEffect(() => {
+    setIsVisible(scrollDirection === "up");
+
     let ctx = gsap.context(() => {
       const links = gsap.utils.toArray(".navlink");
 
@@ -58,16 +60,15 @@ function Header({}: Props) {
     return () => {
       ctx.revert();
     };
-  }, [openNav]);
+  }, [openNav, scrollDirection, isVisible]);
 
   // header nav
 
   return (
     <div ref={navRef}>
-      {/* {isVisible && ( */}
       <nav
         className={`fixed bg-[rgba(10,10,10,0.2)] top-0 left-0 backdrop-blur w-full z-40 transition-all duration-1000 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible === false ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <div className="flex items-center justify-between text-slate-200 p-4 ">
