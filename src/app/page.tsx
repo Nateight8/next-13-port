@@ -15,7 +15,6 @@ export default async function Home() {
     <main className="">
       <Hero />
       <Projects projects={projects} />
-      <div className="h-screen w-full"></div>
     </main>
   );
 }
