@@ -21,8 +21,8 @@ function Projects({ projects }: Props) {
       const projects = gsap.utils.toArray(".project") as HTMLElement[];
 
       projects.forEach((project, index) => {
-        const prevBg = index === 0 ? "" : projects[index - 1]?.dataset.name;
-        const prevTxt = index === 0 ? "" : projects[index - 1]?.dataset.bg;
+        const prevBg = index === 0 ? "" : projects[index - 1]?.dataset.bg;
+        const prevTxt = index === 0 ? "" : projects[index - 1]?.dataset.name;
 
         const startPosition = index === 0 ? "top top" : "top 50%";
 
