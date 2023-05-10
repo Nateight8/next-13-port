@@ -39,7 +39,7 @@ function Hero({}: Props) {
                 ref={headingRef}
                 className="font-thunder md:text-center text-9xl text-slate-200"
               >
-                Dev Nate
+                Dev By Nate
               </h1>
             </div>
             <p className="text-sm text-slate-300 md:text-center">

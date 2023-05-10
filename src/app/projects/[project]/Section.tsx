@@ -5,14 +5,12 @@ import React, { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Project } from "@/types/project";
 import { AspectRatio } from "@/src/components/ui/aspect-ratio";
-import {
-  ArrowTopRightIcon,
-  FaceIcon,
-  GitHubLogoIcon,
-} from "@radix-ui/react-icons";
+import { ArrowTopRightIcon, LockClosedIcon } from "@radix-ui/react-icons";
 import { Button, buttonVariants } from "@/src/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
+
 type Props = {
   project: Project;
 };
@@ -20,7 +18,8 @@ type Props = {
 gsap.registerPlugin(ScrollTrigger);
 
 function Section({ project }: Props) {
-  const { name, image, github_url, web_url } = project;
+  const { name, image, github_url, web_url, content } = project;
+
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const overviewRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
@@ -106,31 +105,37 @@ function Section({ project }: Props) {
       </section>
       <div className="bg-background min-h-screen w-screen flex items-center justify-center">
         <div className="max-w-prose text-slate-300 px-4">
-          <h1 className="text-3xl font-custom uppercase mb-2">
+          <h1 className="text-3xl font-black uppercase mb-4">
             about this build
           </h1>
-          <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            culpa ullam eos explicabo esse, sunt aperiam aliquid rerum fugiat
-            deleniti consequatur sint adipisci non, voluptate nemo optio dicta
-            odio autem.
-          </p>
+          <PortableText
+            value={content}
+            // components={/* optional object of custom components to use */}
+          />
+
           <div className="my-2">
             <Link
-              href={`${web_url}|| "/"`}
-              className={`${buttonVariants({
-                variant: "link",
-              })}`}
+              href={web_url}
+              className={buttonVariants({ variant: "link" })}
               style={{ padding: "0" }}
             >
-              Visit Websit <ArrowTopRightIcon className="ml-2 h-4 w-4" />
+              Website <ArrowTopRightIcon className="ml-2 h-4 w-4" />
             </Link>
-            <Link
-              href={`${web_url}|| "/"`}
-              className={buttonVariants({ variant: "link" })}
-            >
-              Git Repo <ArrowTopRightIcon className="ml-2 h-4 w-4" />
-            </Link>
+
+            {github_url === null ? (
+              <Button disabled variant="link" className="p-0">
+                Git Repo Private <LockClosedIcon className="ml-2 h-4 w-4" />
+              </Button>
+            ) : (
+              <Link
+                href={github_url}
+                className={`${buttonVariants({
+                  variant: "link",
+                })}`}
+              >
+                Git Repo <ArrowTopRightIcon className="ml-2 h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
       </div>

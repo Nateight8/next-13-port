@@ -91,7 +91,7 @@ function Header({}: Props) {
       </nav>
       {/* )} */}
       <div
-        className="fixed bg-background overflow-hidden overscroll-y-none z-30 top-0 left-0 w-full h-screen p-[4em] border-b border-slate-400/20 "
+        className="fixed bg-background overflow-hidden overscroll-y-none z-30 top-0 left-0 w-full h-screen p-[4em] "
         style={{
           transition: "all 2s cubic-bezier(0.16,1,0.3,1)",
           top: openNav ? "0" : "-100%",
@@ -113,23 +113,3 @@ function Header({}: Props) {
 }
 
 export default Header;
-
-{
-  /* <li
-              className="text-slate-200 relative "
-              key={id}
-              style={{
-                transition: "all 2s cubic-bezier(0.16,1,0.3,1)",
-                // top: openNav ? "0" : "-100%",
-              }}
-            >
-              <Link
-                className="text-center uppercase font-customTwo text-3xl"
-                href={href}
-                onClick={handleIt}
-              >
-                {label}
-              </Link>
-              {/* <div className=" absolute inset-0 bg-background"></div> */
-}
-// </li> */}
