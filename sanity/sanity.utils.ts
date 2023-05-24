@@ -21,6 +21,8 @@ export async function getProjects(): Promise<Project[]> {
         dataset_bg,
         github_url,
         web_url,
+        tasks,
+        intro
     }`
   );
 }

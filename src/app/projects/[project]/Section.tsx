@@ -10,6 +10,8 @@ import { Button, buttonVariants } from "@/src/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
+import { Label } from "@/src/components/ui/label";
+import { Checkbox } from "@/src/components/ui/checkbox";
 
 type Props = {
   project: Project;
@@ -18,7 +20,7 @@ type Props = {
 gsap.registerPlugin(ScrollTrigger);
 
 function Section({ project }: Props) {
-  const { name, image, github_url, web_url, content } = project;
+  const { name, image, github_url, web_url, content, tasks, intro } = project;
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const overviewRef = useRef<HTMLDivElement | null>(null);
@@ -59,6 +61,8 @@ function Section({ project }: Props) {
     return () => ctx.revert();
   });
 
+  console.log(tasks);
+
   return (
     <>
       <section
@@ -78,9 +82,7 @@ function Section({ project }: Props) {
             <h1 className="uppercase font-thunder text-7xl md:text-9xl max-w-4xl">
               {name}
             </h1>
-            <p className="text-sm">
-              New folio, new face for a creative & technical ui/ux agency
-            </p>
+            <p className="text-sm">{intro}</p>
           </div>
         </div>
         <div
@@ -112,6 +114,14 @@ function Section({ project }: Props) {
             value={content}
             // components={/* optional object of custom components to use */}
           />
+
+          {tasks &&
+            tasks.map(({ name, isComplete }) => (
+              <div key={name} className="flex items-center space-x-2 my-3">
+                <Checkbox id="terms" checked={isComplete} />
+                <Label htmlFor="terms">{name}</Label>
+              </div>
+            ))}
 
           <div className="my-2">
             <Link

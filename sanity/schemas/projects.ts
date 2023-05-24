@@ -54,6 +54,33 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "intro",
+      title: "Intro",
+      type: "string",
+    },
+    {
+      name: "tasks",
+      title: "Tasks",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "isComplete",
+              title: "Is Complete",
+              type: "boolean",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 

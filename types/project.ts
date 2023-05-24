@@ -1,5 +1,10 @@
 import { PortableTextBlock } from "sanity";
 
+type Task = {
+  name: string;
+  isComplete: boolean;
+};
+
 export type Project = {
   _id: string;
   _createdAt: Date;
@@ -12,4 +17,6 @@ export type Project = {
   dataset_bg: string;
   github_url: string;
   web_url: string;
+  tasks: Task[];
+  intro: string;
 };
