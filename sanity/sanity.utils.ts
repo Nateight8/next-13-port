@@ -47,6 +47,8 @@ export async function getProject(slug: string): Promise<Project> {
         dataset_bg,
         github_url,
         web_url,
+        tasks,
+        intro
     }`,
     { slug }
   );

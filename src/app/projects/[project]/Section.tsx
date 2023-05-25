@@ -61,7 +61,7 @@ function Section({ project }: Props) {
     return () => ctx.revert();
   });
 
-  console.log(tasks);
+  console.log(project);
 
   return (
     <>
@@ -71,7 +71,7 @@ function Section({ project }: Props) {
       >
         <div className="absolute z-0 ">
           <h1 className=" uppercase opacity-0 backtext text-[32rem] z-10 md:text-[40rem] text-slate-300 whitespace-nowrap font-thunder font-bold">
-            <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
+            <span className=" bg-gradient-to-b font-customTwo from-slate-200 to-background bg-clip-text text-transparent">
               {name}
             </span>
           </h1>
@@ -79,7 +79,7 @@ function Section({ project }: Props) {
         <div className="panel bg-background w-screen h-screen p-4 flex items-center">
           <div className="">
             <p className="text-sm pb-3">03-04-2023</p>
-            <h1 className="uppercase font-thunder text-7xl md:text-9xl max-w-4xl">
+            <h1 className="uppercase font-thunder text-primary text-7xl md:text-9xl max-w-4xl">
               {name}
             </h1>
             <p className="text-sm">{intro}</p>
@@ -106,8 +106,8 @@ function Section({ project }: Props) {
         <div className="panel bg-background w-screen h-screen p-4 flex items-center "></div>
       </section>
       <div className="bg-background min-h-screen w-screen flex items-center justify-center">
-        <div className="max-w-prose text-slate-300 px-4">
-          <h1 className="text-3xl font-black uppercase mb-4">
+        <div className="max-w-prose text-primary px-4">
+          <h1 className="text-3xl font-thunder text-accent uppercase mb-4">
             about this build
           </h1>
           <PortableText

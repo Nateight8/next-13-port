@@ -19,7 +19,7 @@ function ProjectPanel({ project }: Props) {
         className="project w-full flex-col overflow-hidden min-h-screen px-4 my-6 flex items-center justify-center relative"
       >
         <div className="absolute left-1/2 -translate-x-1/2 uppercase z-0">
-          <h1 className=" uppercase text-[32rem] opacity-20 md:text-[40rem] text-slate-300 whitespace-nowrap font-thunder font-bold  ">
+          <h1 className="  font-customTwo uppercase text-[32rem] opacity-20 md:text-[40rem] text-slate-300 whitespace-nowrap  ">
             <span className=" bg-gradient-to-b from-slate-200 to-background bg-clip-text text-transparent">
               {name}
             </span>

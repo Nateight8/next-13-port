@@ -24,8 +24,12 @@ const custom = localFont({
   variable: "--heading",
 });
 const textFont = localFont({
-  src: "../../public/font/avante/Avant-book-r.otf",
+  src: "../../public/font/Thunder-blacklc.ttf",
   variable: "--custom",
+});
+
+const customB = localFont({
+  src: "../../public/font/avante/Avant-book-r.otf",
 });
 
 export default function RootLayout({
@@ -36,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${avantR.variable} ${textFont.className} ${custom.variable} `}
+        className={`${avantR.variable} ${textFont.variable} ${custom.variable} ${customB.className} `}
       >
         <HeaderToo />
         {children}
