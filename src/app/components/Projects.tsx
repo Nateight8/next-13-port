@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Project } from "@/types/project";
 import ProjectPanel from "./Project";
+import { Container } from "@/src/components/ui/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 type Props = {
@@ -56,6 +57,15 @@ function Projects({ projects }: Props) {
         ref={appRef}
         className="main flex flex-col items-center justify-between"
       >
+        <Container className="">
+          <div className="">
+            <div className="w-fit mb-8">
+              <h1 className="text-lg text-primary uppercase ">WORK</h1>
+              <div className="bg-primary h-px w-full" />
+            </div>
+          </div>
+          <div className=""></div>
+        </Container>
         {projects.map((project) => (
           <ProjectPanel key={project._id} project={project} />
         ))}

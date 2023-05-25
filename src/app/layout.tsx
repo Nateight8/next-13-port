@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--bodyFont" });
+// const montserrat = Montserrat({ subsets: ["latin"], variable: "--bodyFont" });
 
 export const metadata = {
   title: "Dev by Nate | Portfolio",
@@ -13,17 +13,17 @@ export const metadata = {
 import localFont from "next/font/local";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-const thunder = localFont({
-  src: "../../public/font/Thunder-BlackLC.ttf",
+const avantR = localFont({
+  src: "../../public/font/avante/Avant-demi-r.otf",
   variable: "--headingFont",
 });
 
 const custom = localFont({
-  src: "../../public/font/custom.ttf",
+  src: "../../public/font/avante/Avant-demi-r.otf",
   variable: "--heading",
 });
-const monum = localFont({
-  src: "../../public/font/MonumentExtended-Ultrabold.otf",
+const textFont = localFont({
+  src: "../../public/font/avante/Avant-book-r.otf",
   variable: "--custom",
 });
 
@@ -35,11 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${thunder.variable} ${montserrat.className} ${custom.variable} ${monum.variable}`}
+        className={`${avantR.variable} ${textFont.className} ${custom.variable} `}
       >
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

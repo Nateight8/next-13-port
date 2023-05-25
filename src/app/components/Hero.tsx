@@ -42,7 +42,7 @@ function Hero({}: Props) {
                 Dev By Nate
               </h1>
             </div>
-            <p className="text-sm text-slate-300 md:text-center">
+            <p className="text-base text-slate-300 md:text-center">
               Front-end developer with a passion for crafting beautiful,
               intuitive interfaces. Dedicated to bringing clients&apos; visions
               to life through cutting-edge technology and innovative design.
