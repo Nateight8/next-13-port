@@ -5,9 +5,14 @@ type Props = {};
 
 function Intro({}: Props) {
   return (
-    <Container className="flex items-center justify-center min-h-screen">
+    <Container
+      id="#intro"
+      className="flex py-6 md:py-10 items-center justify-center min-h-screen"
+    >
       <h1 className="font-thunder text-primary text-center md:text-center text-7xl md:text-9xl text-slte-200">
-        <span className="block">I&rsquo;VE BEEN</span>
+        <span className="block md:hidden">I&rsquo;VE</span>
+        <span className="block md:hidden">BEEN</span>
+        <span className="hidden md:block">I&rsquo;VE BEEN</span>
         <span className="block text-accent">CODING</span>
         <span className="block">SINCE</span>
         <span className="block">2019</span>

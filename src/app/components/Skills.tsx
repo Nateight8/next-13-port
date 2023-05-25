@@ -1,4 +1,5 @@
 import { Container } from "@/src/components/ui/Container";
+import { Heading } from "@/src/components/ui/Heading";
 import React from "react";
 
 type Props = {};
@@ -46,12 +47,7 @@ function Skills({}: Props) {
     <div className="my-4 min-h-screen w-full flex items-center justify-center">
       <div className="w-full">
         <Container className="h-fit">
-          <div className="">
-            <div className="w-fit mb-8">
-              <h1 className="text-lg text-primary uppercase ">expertise</h1>
-              <div className="bg-primary h-px w-full" />
-            </div>
-          </div>
+          <Heading className="mb-8">Expertise</Heading>
         </Container>
         <div className="bg-border w-full grid gap-px">
           <div></div>

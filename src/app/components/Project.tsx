@@ -16,7 +16,7 @@ function ProjectPanel({ project }: Props) {
       <div
         data-bg={dataset_bg}
         data-name={dataset_text}
-        className="project w-full flex-col overflow-hidden h-screen px-4 my-6 flex items-center justify-center relative"
+        className="project w-full flex-col overflow-hidden min-h-screen px-4 my-6 flex items-center justify-center relative"
       >
         <div className="absolute left-1/2 -translate-x-1/2 uppercase z-0">
           <h1 className=" uppercase text-[32rem] opacity-20 md:text-[40rem] text-slate-300 whitespace-nowrap font-thunder font-bold  ">

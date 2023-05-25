@@ -1,18 +1,16 @@
 import { Container } from "@/src/components/ui/Container";
+import { Heading } from "@/src/components/ui/Heading";
 import React from "react";
 
 type Props = {};
 
 function AboutMe({}: Props) {
   return (
-    <Container className="flex justify-center items-center min-h-screen">
-      <div className="">
-        <div className="w-fit mb-8">
-          <h1 className="text-lg text-primary uppercase ">About me</h1>
-          <div className="bg-primary h-px w-full" />
-        </div>
+    <Container className="flex my-[40vh] md:my-10 justify-center items-center min-h-screen">
+      <div>
+        <Heading className="mb-8">About me</Heading>
 
-        <p className="text-3xl md:text-5xl font-thunder text-primary">
+        <p className="text-4xl md:text-5xl font-thunder text-primary">
           I&rsquo;m a <span className="text-accent">frontend dev</span> with a
           passion for crafting beautiful, intuitive interfaces. Dedicated to
           bringing clients&rsquo; visions to life through cutting-edge
@@ -20,6 +18,7 @@ function AboutMe({}: Props) {
           <span className="hidden md:inline-block ml-1.5">technology</span> and
           innovative design. Let&rsquo;s build something amazing together.
         </p>
+        {/* <div className="min-h-[60vh] w-full md:hidden"></div> */}
       </div>
     </Container>
   );

@@ -13,6 +13,7 @@ export const metadata = {
 import localFont from "next/font/local";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import HeaderToo from "../components/header/HeaderToo";
 const avantR = localFont({
   src: "../../public/font/avante/Avant-Demi-R.otf",
   variable: "--headingFont",
@@ -37,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${avantR.variable} ${textFont.className} ${custom.variable} `}
       >
-        <Header />
+        <HeaderToo />
         {children}
         {/* <Footer /> */}
       </body>
