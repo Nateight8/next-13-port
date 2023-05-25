@@ -24,7 +24,7 @@ const custom = localFont({
   variable: "--heading",
 });
 const textFont = localFont({
-  src: "../../public/font/Thunder-blacklc.ttf",
+  src: "../../public/font/Thunder-BlackLC.ttf",
   variable: "--custom",
 });
 
