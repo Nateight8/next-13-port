@@ -14,12 +14,12 @@ import localFont from "next/font/local";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 const avantR = localFont({
-  src: "../../public/font/avante/Avant-demi-r.otf",
+  src: "../../public/font/avante/Avant-Demi-R.otf",
   variable: "--headingFont",
 });
 
 const custom = localFont({
-  src: "../../public/font/avante/Avant-demi-r.otf",
+  src: "../../public/font/avante/Avant-Demi-R.otf",
   variable: "--heading",
 });
 const textFont = localFont({
