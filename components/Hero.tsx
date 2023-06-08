@@ -10,7 +10,7 @@ function Hero({}: Props) {
           style={{ fontSize: "6rem", color: "whitesmoke" }}
           className=" text-stone-300 font-heading text-center"
         >
-          all work!
+          All Work!
         </h1>
         <p className="text-3xl text-center text-slate-300">
           Handpicked highlights
