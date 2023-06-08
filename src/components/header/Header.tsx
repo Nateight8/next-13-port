@@ -77,7 +77,7 @@ function Header({}: Props) {
               setOpenNav(false);
             }}
             href="/"
-            className="font-customTwo"
+            // className="font-customTwo"
           >
             HOME
           </Link>

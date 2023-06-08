@@ -14,22 +14,14 @@ import localFont from "next/font/local";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import HeaderToo from "../components/header/HeaderToo";
-const avantR = localFont({
-  src: "../../public/font/avante/Avant-Demi-R.otf",
-  variable: "--headingFont",
-});
 
-const custom = localFont({
-  src: "../../public/font/avante/Avant-Demi-R.otf",
+const heading = localFont({
+  src: "../../public/font/Canopee.otf",
   variable: "--heading",
 });
-const textFont = localFont({
-  src: "../../public/font/Thunder-BlackLC.ttf",
-  variable: "--custom",
-});
-
-const customB = localFont({
-  src: "../../public/font/avante/Avant-book-r.otf",
+const body = localFont({
+  src: "../../public/font/editorial/EditorialNew-Ultralight.otf",
+  variable: "--heading",
 });
 
 export default function RootLayout({
@@ -39,10 +31,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${avantR.variable} ${textFont.variable} ${custom.variable} ${customB.className} `}
-      >
-        <HeaderToo />
+      <body className={` ${heading.variable} ${body.className} `}>
+        {/* <Header /> */}
         {children}
         {/* <Footer /> */}
       </body>

@@ -26,7 +26,7 @@ function HeaderToo({}: Props) {
 
   const path = usePathname();
 
-  console.log(path);
+  // console.log(path);
 
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-end p-4 z-50">

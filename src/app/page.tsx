@@ -3,26 +3,28 @@ import Image from "next/image";
 import { AspectRatio } from "@/src/components/ui/aspect-ratio";
 import { getProjects } from "@/sanity/sanity.utils";
 import Project from "./components/Project";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Intro from "./components/Intro";
-import AboutMe from "./components/AboutMe";
-import Skills from "./components/Skills";
-import Arsenals from "./components/Arsenals";
+import Hero from "@/components/Hero";
 
-export default async function Home() {
-  const projects = await getProjects();
+// import Projects from "./components/Projects";
+// import Intro from "./components/Intro";
+// import AboutMe from "./components/AboutMe";
+// import Skills from "./components/Skills";
+// import Arsenals from "./components/Arsenals";
+
+export default function Home() {
+  // const projects = await getProjects();
 
   // console.log(projects);
 
   return (
-    <main className="">
-      <Intro />
-      <AboutMe />
-      <Skills />
-      <Arsenals />
-      {/* <Hero /> */}
-      <Projects projects={projects} />
+    <main className="w-full">
+      {/* // <Hero />
+      // <AboutMe />
+      // <Skills />
+      // <Arsenals />
+
+      // <Projects projects={projects} /> */}
+      <Hero />
     </main>
   );
 }

@@ -52,15 +52,12 @@ function Skills({}: Props) {
         <div className="bg-border w-full grid gap-px">
           <div></div>
           {skills.map(({ id, skill, info }) => (
-            <div
-              key={id}
-              className="bg-background w-full hover:cursor-pointer hover:bg-primary transition-all duration-1000 ease-in-out delay-300"
-            >
+            <div key={id} className="bg-background w-full hover:cursor-pointer">
               <Container className="py-4 md:flex justify-between items-center ">
                 <p className="flex-1 text-5xl font-thunder text-primary uppercase">
                   {skill}
                 </p>
-                <p className="text-sm text-background max-w-4xl">{info}</p>
+                {/* <p className="text-sm text-background max-w-4xl">{info}</p> */}
               </Container>
             </div>
           ))}
