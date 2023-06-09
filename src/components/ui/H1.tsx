@@ -20,7 +20,7 @@ interface H2Heading
 const H1 = forwardRef<HTMLHeadingElement, H2Heading>(
   ({ children, className, size, ...props }, ref) => {
     return (
-      <div className="">
+      <div className="py-4">
         <h1
           style={{ fontSize: "6rem", color: "whitesmoke", lineHeight: 1.1 }}
           ref={ref}

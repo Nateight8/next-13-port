@@ -4,10 +4,10 @@ import React from "react";
 
 type Props = {};
 
-function Hero({}: Props) {
+function Work({}: Props) {
   return (
     <div className="w-full h-screen py-10 px-4">
-      <div className="">
+      <div className="p-10">
         <H1 className="text-center">All Work!</H1>
         <P className="text-center  ">Handpicked highlights</P>
       </div>
@@ -15,4 +15,4 @@ function Hero({}: Props) {
   );
 }
 
-export default Hero;
+export default Work;
