@@ -2,10 +2,10 @@ import { cn } from "@/src/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
 import { HTMLAttributes, forwardRef } from "react";
 
-const pVariant = cva(" text-3xl  font-heading text-gray-200", {
+const pVariant = cva("   font-heading text-gray-200", {
   variants: {
     size: {
-      default: "text-3xl",
+      default: "text-lg",
     },
   },
   defaultVariants: {

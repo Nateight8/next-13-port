@@ -22,7 +22,7 @@ const H2 = forwardRef<HTMLHeadingElement, H2Heading>(
     return (
       <div className="">
         <h2
-          style={{ fontSize: "2rem", color: "whitesmoke", lineHeight: 1.1 }}
+          style={{ fontSize: "2.5rem", color: "whitesmoke", lineHeight: 1.1 }}
           ref={ref}
           {...props}
           className={cn(H2Variant({ size, className }))}
