@@ -16,7 +16,7 @@ import Footer from "../components/footer/Footer";
 import HeaderToo from "../components/header/HeaderToo";
 
 const heading = localFont({
-  src: "../../public/font/Canopee.otf",
+  src: "../../public/font/Canopee Regular.otf",
   variable: "--heading",
 });
 const body = localFont({
@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` ${heading.variable} ${body.className} `}>
+      <body className={` ${heading.className} ${body.variable} `}>
         {/* <Header /> */}
         {children}
         {/* <Footer /> */}

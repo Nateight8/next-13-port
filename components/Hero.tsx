@@ -8,7 +8,7 @@ function Hero({}: Props) {
       <div className="">
         <h1
           style={{ fontSize: "6rem", color: "whitesmoke" }}
-          className=" text-stone-300 font-heading text-center"
+          className=" text-red-300 font-heading text-center"
         >
           All Work!
         </h1>
