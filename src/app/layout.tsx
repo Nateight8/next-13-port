@@ -17,7 +17,6 @@ import HeaderToo from "../components/header/HeaderToo";
 
 const heading = localFont({
   src: "../../public/font/Canopee Regular.otf",
-  variable: "--heading",
 });
 const body = localFont({
   src: "../../public/font/editorial/EditorialNew-Ultralight.otf",
